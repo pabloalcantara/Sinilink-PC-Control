@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sinilink account",
+        "description": "Sign in with the account used by the Sinilink mobile app (com.xydc). The integration stores the login token, not your password.\n\nNote: the backend accepts both an e-mail and a phone number. The dial code must match the country of the account.",
+        "data": {
+          "login": "E-mail or phone number",
+          "password": "Password",
+          "dial_code": "Dial code",
+          "locale": "Backend locale"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the Sinilink backend. Check the locale and try again.",
+      "invalid_account": "The account was not recognised. Check the e-mail/phone and the dial code.",
+      "invalid_auth": "Wrong password."
+    },
+    "abort": {
+      "already_configured": "This account is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sinilink credentials",
+        "description": "Change the credentials stored for this account.",
+        "data": {
+          "login": "E-mail or phone number",
+          "password": "Password",
+          "dial_code": "Dial code",
+          "locale": "Backend locale"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the Sinilink backend.",
+      "invalid_account": "The account was not recognised.",
+      "invalid_auth": "Wrong password."
+    }
+  },
+  "entity": {
+    "switch": {
+      "power_boot": {
+        "name": "Power on after power loss"
+      }
+    },
+    "button": {
+      "power_on": {
+        "name": "Power on"
+      },
+      "power_off": {
+        "name": "Power off"
+      },
+      "force_off": {
+        "name": "Force power off"
+      },
+      "refresh_state": {
+        "name": "Refresh state"
+      }
+    },
+    "number": {
+      "refresh_interval": {
+        "name": "Refresh interval"
+      }
+    },
+    "sensor": {
+      "pc_status": {
+        "name": "PC status"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "domain": "sinilink_pc",
+  "name": "Sinilink PC Power",
+  "after_dependencies": [],
+  "codeowners": ["@pabloalcantara"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/pabloalcantara/Home-Assistant-Integrations",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/pabloalcantara/Home-Assistant-Integrations/issues",
+  "requirements": ["pycryptodome>=3.20"],
+  "version": "0.2.0"
+}
