@@ -1,15 +1,16 @@
-# Home Assistant Integrations
+# Sinilink - PC Control
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
 
-A collection of custom integrations for Home Assistant, maintained by
-[@pabloalcantara](https://github.com/pabloalcantara).
+A Home Assistant custom integration to control a PC's power state
+(**on / off / force off**) through a **Sinilink XY-WPCE** class PC power
+controller.
 
-## Available integrations
+Maintained by [@pabloalcantara](https://github.com/pabloalcantara).
 
-| Integration | Domain | Description |
-|---|---|---|
-| [Sinilink PC Power](#sinilink-pc-power) | `sinilink_pc` | Control a PC's power (on / off) through a Sinilink XY-WPCE class controller. |
+> **Note:** HACS supports only **one integration per repository**, so each of my
+> integrations lives in its own repository. This one ships the `sinilink_pc`
+> integration only.
 
 ---
 
@@ -21,11 +22,11 @@ A collection of custom integrations for Home Assistant, maintained by
 4. Add this repository URL:
 
    ```
-   https://github.com/pabloalcantara/Home-Assistant-Integrations
+   https://github.com/pabloalcantara/Sinilink-PC-Control
    ```
 
 5. Set **Type** to `Integration` and click **Add**.
-6. Search for **Sinilink PC Power** in HACS and click **Download**.
+6. Search for **Sinilink - PC Control** in HACS and click **Download**.
 7. Restart Home Assistant.
 8. Go to **Settings → Devices & Services → Add Integration** and search for
    **Sinilink PC Power**.
@@ -38,26 +39,21 @@ integration from **Settings → Devices & Services**.
 
 ---
 
-## Sinilink PC Power
+## ⚠️ Scope: PC power control only
 
-Control the power state of a PC using a **Sinilink XY-WPCE** (or compatible)
-PC power controller.
+**At this moment this integration only works with the Sinilink PC power on/off
+controllers** — the module wired to the motherboard's power button, e.g. the
+XY-WPCE.
 
-> ### ⚠️ Scope: PC power control only
->
-> **At this moment this integration only works with the Sinilink PC
-> power on/off controllers** (the module wired to the motherboard's power
-> button, e.g. the XY-WPCE).
->
-> It does **not** support other Sinilink devices. In particular it does **not**
-> handle temperature/humidity sensors (`wenshidu`), plain relay boards, power
-> supplies (`dianyuan`), dimmers or PWM devices, even though they share the same
-> cloud account and MQTT broker.
->
-> Support for other device types may be added later; they are simply not
-> implemented today.
+It does **not** support other Sinilink devices. In particular it does **not**
+handle temperature/humidity sensors (`wenshidu`), plain relay boards, power
+supplies (`dianyuan`), dimmers or PWM devices, even though they share the same
+cloud account and MQTT broker.
 
-### How it works
+Support for other device types may be added later; they are simply not
+implemented today.
+
+## How it works
 
 The controller sits on the PC's power-button pin. It is powered from the ATX
 5 V standby rail, so the module stays online even while the PC is off — which is
@@ -68,7 +64,7 @@ TCP on port 1884), the same one the devices use. Account login is only needed
 once, to discover the devices (and it stores the resulting token, never the
 password).
 
-### Entities
+## Entities
 
 For every controller found on the account:
 
@@ -94,7 +90,7 @@ current state first, so a button never does the opposite of its label:
 After either command the integration keeps refreshing the state until the change
 is confirmed (every 5 s, up to 3 minutes), so the dashboard updates on its own.
 
-### Requirements
+## Requirements
 
 * Home Assistant 2024.6 or newer.
 * A Sinilink account with at least one PC power controller registered in the
@@ -102,7 +98,7 @@ is confirmed (every 5 s, up to 3 minutes), so the dashboard updates on its own.
 * The `pycryptodome` Python package (installed automatically by Home Assistant
   from the integration manifest).
 
-### Configuration
+## Configuration
 
 The integration is configured entirely through the UI:
 
@@ -120,7 +116,7 @@ stored — the integration never keeps your password.
 > controller with ESPHome is the recommended option if you want fully local,
 > private control.
 
-### Troubleshooting
+## Troubleshooting
 
 * **Entities show `unavailable`** — the controller is offline (not connected to
   the broker). Check the device's power and its connection in the Sinilink app.
