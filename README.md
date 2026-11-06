@@ -102,14 +102,29 @@ is confirmed (every 5 s, up to 3 minutes), so the dashboard updates on its own.
 
 The integration is configured entirely through the UI:
 
-1. **Settings → Devices & Services → Add Integration → Sinilink PC Power**.
+1. **Settings → Devices & Services → Add Integration → Sinilink - PC Control**.
 2. Enter the account **e-mail or phone number** used by the Sinilink mobile app.
-3. Enter the **password**
+3. Enter the **password**.
 4. Set the **dial code** to match the country of the account (default `+55`).
 5. Leave **Backend locale** as `en_US`.
 
 The credentials are used once to obtain a login token. The token is what gets
 stored — the integration never keeps your password.
+
+## Languages
+
+The UI is translated and follows your Home Assistant language automatically:
+
+| Language | File |
+|---|---|
+| English (default/fallback) | `translations/en.json` |
+| Português (Brasil) | `translations/pt-BR.json` |
+
+If your Home Assistant is set to a language that has no translation yet, it
+falls back to English.
+
+**Note:** the *Backend locale* option is not the UI language — it is a value the
+Sinilink servers require and must stay `en_US`.
 
 > **Note:** the Sinilink broker is an open, anonymous MQTT broker. Anyone who
 > knows a device's MAC address can see and control that device. Reflashing the

@@ -6,7 +6,7 @@ from typing import Final
 
 DOMAIN: Final = "sinilink_pc"
 NAME: Final = "Sinilink PC Power"
-VERSION: Final = "0.2.0"
+VERSION: Final = "0.3.0"
 
 # --- Cloud API (account login / device list) ---------------------------------
 API_BASE: Final = "https://app.sinilink.com"

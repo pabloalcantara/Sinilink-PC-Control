@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conta Sinilink",
+        "description": "Entre com a conta usada pelo aplicativo Sinilink (com.xydc). A integração guarda o token de acesso, não a sua senha.\n\nObservação: o backend aceita tanto e-mail quanto telefone. O código do país (DDI) precisa corresponder ao país da conta.",
+        "data": {
+          "login": "E-mail ou telefone",
+          "password": "Senha",
+          "dial_code": "Código do país (DDI)",
+          "locale": "Idioma do backend"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Não foi possível alcançar o backend do Sinilink. Verifique o idioma do backend e tente novamente.",
+      "invalid_account": "A conta não foi reconhecida. Verifique o e-mail/telefone e o código do país.",
+      "invalid_auth": "Senha incorreta."
+    },
+    "abort": {
+      "already_configured": "Esta conta já está configurada."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Credenciais do Sinilink",
+        "description": "Altere as credenciais guardadas para esta conta.",
+        "data": {
+          "login": "E-mail ou telefone",
+          "password": "Senha",
+          "dial_code": "Código do país (DDI)",
+          "locale": "Idioma do backend"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Não foi possível alcançar o backend do Sinilink.",
+      "invalid_account": "A conta não foi reconhecida.",
+      "invalid_auth": "Senha incorreta."
+    }
+  },
+  "entity": {
+    "switch": {
+      "power_boot": {
+        "name": "Ligar após queda de energia"
+      }
+    },
+    "button": {
+      "power_on": {
+        "name": "Ligar"
+      },
+      "power_off": {
+        "name": "Desligar"
+      },
+      "force_off": {
+        "name": "Forçar desligamento"
+      },
+      "refresh_state": {
+        "name": "Atualizar estado"
+      }
+    },
+    "number": {
+      "refresh_interval": {
+        "name": "Intervalo de atualização"
+      }
+    },
+    "sensor": {
+      "pc_status": {
+        "name": "Status do PC"
+      }
+    }
+  }
+}
